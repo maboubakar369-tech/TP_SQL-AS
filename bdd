@@ -23,8 +23,8 @@ CREATE TABLE client (
 
 CREATE TABLE location (
     id_location SERIAL PRIMARY KEY,
-    date_debut TIMESTAMP NOT NULL,
-    date_fin TIMESTAMP,
+    date_debut DATE,
+    date_fin DATE,
     id_client INTEGER REFERENCES client(id_client),
     id_vehicule INTEGER REFERENCES vehicule(id_vehicule),
     id_station_depart INTEGER REFERENCES station(id_station),
