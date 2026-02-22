@@ -1,0 +1,32 @@
+CREATE TABLE vehicule (
+    id_vehicule SERIAL PRIMARY KEY,
+    marque VARCHAR(50) NOT NULL,
+    modele VARCHAR(50) NOT NULL,
+    type_vehicule VARCHAR(50), 
+    autonomie_km INTEGER,
+    etat VARCHAR(20) 
+    ville VARCHAR(100)
+);
+
+CREATE TABLE station (
+    id_station SERIAL PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    ville VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE client (
+    id_client SERIAL PRIMARY KEY,
+    nom VARCHAR(50) NOT NULL,
+    prenom VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL
+);
+
+CREATE TABLE location (
+    id_location SERIAL PRIMARY KEY,
+    date_debut TIMESTAMP NOT NULL,
+    date_fin TIMESTAMP,
+    id_client INTEGER REFERENCES client(id_client),
+    id_vehicule INTEGER REFERENCES vehicule(id_vehicule),
+    id_station_depart INTEGER REFERENCES station(id_station),
+    id_station_arrivee INTEGER REFERENCES station(id_station)
+);
