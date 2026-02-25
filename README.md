@@ -2,7 +2,9 @@
     1-Présentation du Projet
 
 Ce projet consiste à concevoir et administrer une base de données relationnelle pour cIAra Mobility, une entreprise de location de véhicules électriques. L'objectif est de fournir une solution robuste pour gérer une flotte de 200 véhicules, suivre les clients et analyser les performances des locations via PostgreSQL.
+
      2- Rapport d'Analyse Technique
+
 A. Organisation du travail
 
     Méthodologie : Le projet a été réalisé de manière structurée : d'abord la définition de l'architecture des tables, puis l'importation des données, et enfin la résolution des quêtes analytiques. La répartition des tâches s'est faite par quêtes de manière progressive.
@@ -11,7 +13,7 @@ A. Organisation du travail
 
     Environnement de travail : * pgAdmin 4 : Utilisé pour la création visuelle, l'administration de la base et l'exécution des requêtes de test.
 
-        Visual Studio Code : Utilisé pour l'édition des scripts SQL et la rédaction de ce rapport technique.
+   - Visual Studio Code : Utilisé pour l'édition des scripts SQL et la rédaction de ce rapport technique.
 
 B. Analyse du Modèle de Données (MCD)
 
@@ -19,7 +21,7 @@ B. Analyse du Modèle de Données (MCD)
 
     Relations : * Chaque table dispose d'une clé primaire unique (id_...).
 
-        La table location est la table centrale. Elle possède des clés étrangères qui pointent vers les trois autres tables.
+    - La table location est la table centrale. Elle possède des clés étrangères qui pointent vers les trois autres tables.
 
     Pertinence : Cette structuration répond parfaitement aux besoins de cIAra Mobility car elle évite la redondance des données (le nom d'un client n'est écrit qu'une fois) et permet de suivre l'historique complet d'un véhicule à travers les différentes stations.
 
@@ -46,3 +48,8 @@ D. Difficultés rencontrées et Solutions
     Jointures et NULL : Identifier les véhicules n'ayant jamais été loués a été une difficulté technique.
 
         Solution : L'utilisation du LEFT JOIN couplé à une condition IS NULL sur la clé étrangère a permis d'isoler les véhicules sans historique.
+
+
+    comme Membre du groupe on a :
+       - Mohamadou Dewa Aboubakar 
+       - Ofomo Israel 
