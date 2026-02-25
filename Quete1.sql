@@ -3,7 +3,7 @@ FROM vehicule ;
 
 SELECT * 
 FROM vehicule
-WHERE etat = 'disponible';
+WHERE etat = 'Disponible';
 
 SELECT *
 FROM vehicule 

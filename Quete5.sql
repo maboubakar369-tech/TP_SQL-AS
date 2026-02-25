@@ -1,25 +1,26 @@
 SELECT * 
 FROM vehicule
-WHERE etat = 'disponible'
+WHERE etat = 'Disponible'
 ORDER BY autonomie_km DESC 
 LIMIT 3;
 
 SELECT  
    ville,
    COUNT(*) AS nombre_vehicules
-FROM vehicules
-WHERE etat = 'disponible'
+FROM vehicule
+WHERE etat = 'Disponible'
 GROUP BY ville 
 ORDER BY nombre_vehicules DESC 
 LIMIT 1;
 
-SELECT clients.nom, COUNT(locations.id) AS nombre_locations
-FROM clients
-INNER JOIN locations ON clients.id = locations.client_id
-GROUP BY clients.nom
-HAVING COUNT(locations.id) >= 2;
+SELECT client.nom, COUNT(id_location) AS nombre_locations
+FROM client
+INNER JOIN location ON client.id_client = location.id_client
+GROUP BY client.nom
+HAVING COUNT(location.id_location) >= 2;
 
-SELECT vehicules.*
-FROM vehicules
-LEFT JOIN locations ON vehicules.id = locations.vehicule_id
-WHERE locations.id IS NULL;
+
+SELECT *
+FROM vehicule
+LEFT JOIN location ON vehicule.id_vehicule = location.id_vehicule
+WHERE location.id_vehicule IS NULL;
